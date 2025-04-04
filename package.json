@@ -1,7 +1,7 @@
 {
-  "name": "vite-min-template",
+  "name": "dipi-test",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,10 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mantine/charts": "^7.17.3",
     "@mantine/core": "7.17.2",
     "@mantine/hooks": "7.17.2",
+    "@tabler/icons": "^3.31.0",
+    "@tabler/icons-react": "^3.31.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.1"
   },
   "devDependencies": {
     "@types/react": "^19.0.12",
