@@ -6,8 +6,8 @@ import { useState } from "react";
 
 const SexPieChart = () => {
     const data = [
-        { name: 'Female', value: 450, color: 'pink.6' },
-        { name: 'Male', value: 438, color: 'violet.6' },
+        { name: 'Female', value: 438, color: 'pink.6' },
+        { name: 'Male', value: 600, color: 'violet.6' },
     ];
 
     const [checked, setChecked] = useState(false);

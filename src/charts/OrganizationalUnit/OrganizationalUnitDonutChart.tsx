@@ -1,7 +1,7 @@
 import { DonutChart } from "@mantine/charts";
 import classes from "./OrganizationalUnitDonutChart.module.css";
 import { Card, Flex, MantineColor, Title } from "@mantine/core";
-import { IconFriends, IconHierarchy3 } from "@tabler/icons-react";
+import { IconHierarchy3 } from "@tabler/icons-react";
 
 const OrganizationalUnitDonutChart = () => {
     const data = [
