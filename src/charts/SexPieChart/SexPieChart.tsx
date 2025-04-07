@@ -13,7 +13,7 @@ const SexPieChart = () => {
     const [checked, setChecked] = useState(false);
 
     return(
-        <Card className={classes.root}>
+        <Card className={classes.root} shadow="md" withBorder radius="md" h={400}>
             <Card.Section p={10}>
                 <Title order={5}><IconFriends stroke={2} /> Nemek aránya</Title>
                 <Switch

@@ -1,7 +1,7 @@
 import { DonutChart, PieChart } from "@mantine/charts";
 import classes from "./PositionPieChart.module.css";
 import { Flex, Title, Card, Switch, MantineColor, List, ScrollArea } from "@mantine/core";
-import { IconFriends, IconLayoutCollage } from "@tabler/icons-react";
+import { IconLayoutCollage } from "@tabler/icons-react";
 import { useState } from "react";
 
 const SexPieChart = () => {
@@ -206,7 +206,7 @@ const SexPieChart = () => {
     })
 
     return(
-        <Card className={classes.root}>
+        <Card className={classes.root} shadow="md" withBorder radius="md"  h={400}>
             <Card.Section p={10}>
                 <Title order={5}><IconLayoutCollage stroke={2} /> Munkakör szerinti megoszlás</Title>
                 <Switch
@@ -221,11 +221,14 @@ const SexPieChart = () => {
                 align="center"
                 direction="row"
             >
-                <DonutChart 
+                <PieChart 
                     data={reducedData} 
-                    chartLabel="Uni" 
                     tooltipDataSource="segment"
+                    withLabelsLine 
+                    labelsPosition="outside" 
                     labelsType="percent" 
+                    withLabels 
+                    withTooltip
                 />
                 <ScrollArea h={250}>
                     <List type="ordered" size="sm" withPadding>

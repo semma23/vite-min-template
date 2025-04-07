@@ -1,11 +1,12 @@
 import { DonutChart } from "@mantine/charts";
 import classes from "./OrganizationalUnitDonutChart.module.css";
-import { Card, Flex, MantineColor, Title } from "@mantine/core";
+import { Card, Flex, MantineColor, Switch, Title } from "@mantine/core";
 import { IconHierarchy3 } from "@tabler/icons-react";
+import { useState } from "react";
 
 const OrganizationalUnitDonutChart = () => {
     const data = [
-        { name: 'Industrial', value: 56},
+        { name: 'Industrial', value: 100},
         { name: 'Movies', value: 55},
         { name: 'Grocery', value: 49},
         { name: 'Games', value: 48},
@@ -25,8 +26,8 @@ const OrganizationalUnitDonutChart = () => {
         { name: 'Toys', value: 38},
         { name: 'Shoes', value: 36},
         { name: 'Clothing', value: 34},
-        { name: 'Computers', value: 33},
-        { name: 'Outdoors', value: 30},
+        { name: 'Computers', value: 12},
+        { name: 'Outdoors', value: 10},
     ];
 
     const colorPalette: MantineColor[] = [
@@ -38,12 +39,18 @@ const OrganizationalUnitDonutChart = () => {
     const dataWithColors = data.map((item, index) => ({
         ...item,
         color: colorPalette[index % colorPalette.length],
-      }));
+    }));
+
+    const [checked, setChecked] = useState(false);
 
     return(
-        <Card className={classes.root}>
+        <Card className={classes.root} shadow="md" withBorder radius="md"  h={400}>
             <Card.Section p={10}>
                 <Title order={5}><IconHierarchy3 stroke={2} /> Szervezeti egységek szerint</Title>
+                <Switch
+                    checked={checked}
+                    onChange={(event) => setChecked(event.currentTarget.checked)}
+                />
             </Card.Section>
             <Flex
                 p={10}
