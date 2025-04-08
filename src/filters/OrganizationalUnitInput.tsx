@@ -2,7 +2,7 @@ import { NativeSelect } from "@mantine/core";
 import { IconChevronDown, IconHash } from "@tabler/icons-react";
 import { useState } from "react";
 
-const TypeInput = () => {
+const OrganizationalUnitInput = () => {
     const [value, setValue] = useState('');
 
     return (
@@ -10,9 +10,9 @@ const TypeInput = () => {
             leftSection={<IconHash size={16} />}
             leftSectionPointerEvents="none"
             rightSection={<IconChevronDown size={16} />}
-            label="Időszaki bontás" 
+            label="Szervezeti egység" 
             description="Input description" 
-            data={['Éves', 'Féléves', 'Negyedéves']} 
+            data={['Pannon Egyetem', 'MIK', 'GTK']} 
             value={value}
             onChange={(event) => setValue(event.currentTarget.value)}
             radius="md"
@@ -20,4 +20,4 @@ const TypeInput = () => {
     )
 }
 
-export default TypeInput;
+export default OrganizationalUnitInput;

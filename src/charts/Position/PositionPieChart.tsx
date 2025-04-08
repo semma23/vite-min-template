@@ -1,8 +1,7 @@
-import { DonutChart, PieChart } from "@mantine/charts";
+import { PieChart } from "@mantine/charts";
 import classes from "./PositionPieChart.module.css";
-import { Flex, Title, Card, Switch, MantineColor, List, ScrollArea } from "@mantine/core";
+import { Flex, Title, Card, MantineColor, List, ScrollArea } from "@mantine/core";
 import { IconLayoutCollage } from "@tabler/icons-react";
-import { useState } from "react";
 
 const SexPieChart = () => {
     const data = [
@@ -187,8 +186,6 @@ const SexPieChart = () => {
         { name: 'Accountant III', value: 1},
     ];
 
-    const [checked, setChecked] = useState(false);
-
     const colorPalette: MantineColor[] = [
         'blue', 'teal', 'grape', 'cyan', 'indigo',
         'orange', 'lime', 'pink', 'red', 'violet',
@@ -209,10 +206,6 @@ const SexPieChart = () => {
         <Card className={classes.root} shadow="md" withBorder radius="md"  h={400}>
             <Card.Section p={10}>
                 <Title order={5}><IconLayoutCollage stroke={2} /> Munkakör szerinti megoszlás</Title>
-                <Switch
-                    checked={checked}
-                    onChange={(event) => setChecked(event.currentTarget.checked)}
-                />
             </Card.Section>
             <Flex
                 p={10}

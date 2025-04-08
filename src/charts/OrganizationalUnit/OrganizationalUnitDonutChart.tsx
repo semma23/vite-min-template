@@ -1,8 +1,7 @@
 import { DonutChart } from "@mantine/charts";
 import classes from "./OrganizationalUnitDonutChart.module.css";
-import { Card, Flex, MantineColor, Switch, Title } from "@mantine/core";
+import { Card, Flex, MantineColor, Title } from "@mantine/core";
 import { IconHierarchy3 } from "@tabler/icons-react";
-import { useState } from "react";
 
 const OrganizationalUnitDonutChart = () => {
     const data = [
@@ -41,16 +40,10 @@ const OrganizationalUnitDonutChart = () => {
         color: colorPalette[index % colorPalette.length],
     }));
 
-    const [checked, setChecked] = useState(false);
-
     return(
         <Card className={classes.root} shadow="md" withBorder radius="md"  h={400}>
             <Card.Section p={10}>
                 <Title order={5}><IconHierarchy3 stroke={2} /> Szervezeti egységek szerint</Title>
-                <Switch
-                    checked={checked}
-                    onChange={(event) => setChecked(event.currentTarget.checked)}
-                />
             </Card.Section>
             <Flex
                 p={10}
@@ -61,8 +54,9 @@ const OrganizationalUnitDonutChart = () => {
             >
                 <DonutChart 
                     data={dataWithColors} 
-                    chartLabel="Uni" 
+                    chartLabel={`Össz: ${dataWithColors.length}`}
                     tooltipDataSource="segment"
+                    withLabelsLine labelsType="percent" withLabels
                 />
             </Flex>
         </Card>

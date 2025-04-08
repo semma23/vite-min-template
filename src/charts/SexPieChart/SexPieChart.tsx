@@ -1,25 +1,18 @@
 import { PieChart } from "@mantine/charts";
 import classes from "./SexPieChart.module.css";
-import { Flex, Title, Card, Switch } from "@mantine/core";
+import { Flex, Title, Card } from "@mantine/core";
 import { IconFriends } from "@tabler/icons-react";
-import { useState } from "react";
 
 const SexPieChart = () => {
     const data = [
         { name: 'Female', value: 438, color: 'pink.6' },
-        { name: 'Male', value: 600, color: 'violet.6' },
+        { name: 'Male', value: 600, color: 'blue.6' },
     ];
-
-    const [checked, setChecked] = useState(false);
 
     return(
         <Card className={classes.root} shadow="md" withBorder radius="md" h={400}>
             <Card.Section p={10}>
                 <Title order={5}><IconFriends stroke={2} /> Nemek aránya</Title>
-                <Switch
-                    checked={checked}
-                    onChange={(event) => setChecked(event.currentTarget.checked)}
-                />
             </Card.Section>
             <Flex
                 p={10}
