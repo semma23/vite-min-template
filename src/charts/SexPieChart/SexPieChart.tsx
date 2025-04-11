@@ -5,8 +5,8 @@ import { IconFriends } from "@tabler/icons-react";
 
 const SexPieChart = () => {
     const data = [
-        { name: 'Female', value: 438, color: 'pink.6' },
-        { name: 'Male', value: 600, color: 'blue.6' },
+        { name: 'Female', value: 438, color: 'pink.3' },
+        { name: 'Male', value: 600, color: 'blue.3' },
     ];
 
     return(

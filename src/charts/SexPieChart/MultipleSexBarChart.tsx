@@ -32,8 +32,8 @@ const MultipleSexBarChart = () => {
                     xAxisProps={{ padding: { left: 30, right: 30 } }}
                     tooltipAnimationDuration={200}
                     series={[
-                        { name: 'Male', color: 'blue.6' },
-                        { name: 'Female', color: 'pink.6' },
+                        { name: 'Male', color: 'blue.3' },
+                        { name: 'Female', color: 'pink.3' },
                     ]}
                 />
             </Flex>
