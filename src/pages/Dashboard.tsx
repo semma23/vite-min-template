@@ -1,32 +1,26 @@
-import { Grid, MantineProvider } from "@mantine/core";
-import AgeNumbers from "../charts/Age/AgeNumbers";
-import OrganizationalUnitDonutChart from "../charts/OrganizationalUnit/OrganizationalUnitDonutChart";
-import PositionPieChart from "../charts/Position/PositionPieChart";
-import MultipleSexBarChart from "../charts/SexPieChart/MultipleSexBarChart";
-import SexPieChart from "../charts/SexPieChart/SexPieChart";
-import { themeForCharts } from "../theme-charts";
+import { Tabs } from "@mantine/core";
+import BasicStats from "./BasicStats";
+import SalaryStats from "./SalaryStats";
 
 const Dashboard = () => {
     return (
-        <MantineProvider theme={themeForCharts}>
-            <Grid p={10}>
-                <Grid.Col span={3}>
-                    <SexPieChart /> 
-                </Grid.Col>
-                <Grid.Col span={3}>
-                    <OrganizationalUnitDonutChart />
-                </Grid.Col>
-                <Grid.Col span={6}>
-                    <PositionPieChart />
-                </Grid.Col>
-                <Grid.Col span={6}>
-                    <MultipleSexBarChart />
-                </Grid.Col>
-                <Grid.Col span={3}>
-                    <AgeNumbers />
-                </Grid.Col>
-            </Grid>
-        </MantineProvider>
+        <Tabs defaultValue="gallery" orientation="vertical" placement="right">
+            <Tabs.List>
+                <Tabs.Tab value="gallery">Dolgozói alapadatok</Tabs.Tab>
+                <Tabs.Tab value="messages">Korosztályos adatok</Tabs.Tab>
+                <Tabs.Tab value="settings">Pénzügyi adatok</Tabs.Tab>
+            </Tabs.List>
+            <Tabs.Panel value="gallery">
+                <BasicStats />
+            </Tabs.Panel>
+            <Tabs.Panel value="messages">
+                <BasicStats />
+            </Tabs.Panel>
+            <Tabs.Panel value="settings">
+                <SalaryStats />
+            </Tabs.Panel>
+        </Tabs>
+        
     )
 }
 

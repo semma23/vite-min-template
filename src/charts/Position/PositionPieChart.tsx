@@ -1,7 +1,6 @@
 import { PieChart } from "@mantine/charts";
-import classes from "./PositionPieChart.module.css";
-import { Flex, Title, Card, MantineColor, List, ScrollArea } from "@mantine/core";
-import { IconLayoutCollage } from "@tabler/icons-react";
+import { List, ScrollArea } from "@mantine/core";
+import { colorPalette } from "../../constants/colorPalette";
 
 const SexPieChart = () => {
     const data = [
@@ -186,12 +185,6 @@ const SexPieChart = () => {
         { name: 'Accountant III', value: 1},
     ];
 
-    const colorPalette: MantineColor[] = [
-        'blue', 'teal', 'grape', 'cyan', 'indigo',
-        'orange', 'lime', 'pink', 'red', 'violet',
-        'green', 'yellow'
-        ];
-
     const dataWithColors = data.map((item, index) => ({
         ...item,
         color: colorPalette[index % colorPalette.length],
@@ -203,18 +196,8 @@ const SexPieChart = () => {
     })
 
     return(
-        <Card className={classes.root} shadow="md" withBorder radius="md"  h={400}>
-            <Card.Section p={10}>
-                <Title order={5}><IconLayoutCollage stroke={2} /> Munkakör szerinti megoszlás</Title>
-            </Card.Section>
-            <Flex
-                p={10}
-                gap="md"
-                justify="center"
-                align="center"
-                direction="row"
-            >
-                <PieChart 
+        <>
+        <PieChart 
                     data={reducedData} 
                     tooltipDataSource="segment"
                     withLabelsLine 
@@ -230,8 +213,7 @@ const SexPieChart = () => {
                         ))}
                     </List>
                 </ScrollArea>
-            </Flex>
-        </Card>
+        </>  
     )
 }
 

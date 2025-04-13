@@ -17,5 +17,5 @@ export const themeForCharts = createTheme({
   colors: {
     myColor,
   },
-  primaryShade: 3
+  // primaryShade: 3
 });
