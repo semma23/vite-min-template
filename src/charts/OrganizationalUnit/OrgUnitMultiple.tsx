@@ -4,11 +4,31 @@ import NoValidData from "../../components/NoValidData";
 import { ChartDataBaseInterface } from "../../interfaces/ChartDataInterface";
 
 const chartData = [
-    { date: '2024-Q1', Male: 500, Female: 650 },
-    { date: '2024-Q2', Male: 455, Female: 560 },
-    { date: '2024-Q3', Male: 600, Female: 440 },
-    { date: '2024-Q4', Male: 500, Female: 600 },
-];
+    {
+      date: "2024-Q1",
+      research: 10,
+      development: 12,
+      QA: 12
+    },
+    {
+      date: "2024-Q2",
+      research: 11,
+      marketing: 12,
+      development: 14
+    },
+    {
+      date: "2024-Q3",
+      QA: 14,
+      research: 10,
+      marketing: 10
+    },
+    {
+      date: "2024-Q4",
+      development: 13,
+      research: 10,
+      QA: 12
+    }
+]
 
 const data: ChartDataBaseInterface = {
     isValid: true,
@@ -17,7 +37,7 @@ const data: ChartDataBaseInterface = {
     result: chartData
 }
 
-const MultipleSexBarChart = () => {
+const OrgUnitMultiple = () => {
     return (
         <>
             {data.isValid ? (
@@ -31,8 +51,10 @@ const MultipleSexBarChart = () => {
                 xAxisProps={{ padding: { left: 30, right: 30 } }}
                 tooltipAnimationDuration={200}
                 series={[
-                    { name: 'Male', color: colorPalette[0] },
-                    { name: 'Female', color: colorPalette[2] },
+                    { name: 'research', color: colorPalette[0] },
+                    { name: 'development', color: colorPalette[1] },
+                    { name: 'QA', color: colorPalette[2] },
+                    { name: 'marketing', color: colorPalette[3] },
                 ]}
                 />
             ): (
@@ -42,4 +64,4 @@ const MultipleSexBarChart = () => {
     )
 }
 
-export default MultipleSexBarChart
+export default OrgUnitMultiple;
