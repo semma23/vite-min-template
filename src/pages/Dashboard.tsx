@@ -14,10 +14,10 @@ const Dashboard = () => {
                 <BasicStats />
             </Tabs.Panel>
             <Tabs.Panel value="messages">
-                <BasicStats />
+                <BasicStats /> //TODO
             </Tabs.Panel>
             <Tabs.Panel value="settings">
-                <SalaryStats />
+                <SalaryStats /> //TODO
             </Tabs.Panel>
         </Tabs>
         

@@ -1,10 +1,10 @@
 import { PieChart } from "@mantine/charts";
-import { colorPalette } from "../../constants/colorPalette";
+import { colorPalette } from "../constants/colorPalette";
 
-const SexPieChart = () => {
+const PartTimeTypePieChart = () => {
     const data = [
-        { name: 'Female', value: 600, color: colorPalette[2] },
-        { name: 'Male', value: 450, color: colorPalette[0] },
+        { name: 'Részmunkaidős', value: 761, color: colorPalette[3] },
+        { name: 'Teljes állású', value: 1610, color: colorPalette[5] },
     ];
 
     return(
@@ -19,4 +19,4 @@ const SexPieChart = () => {
     )
 }
 
-export default SexPieChart;
+export default PartTimeTypePieChart;

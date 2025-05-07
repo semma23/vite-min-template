@@ -5,7 +5,9 @@ import OrganizationalUnitDonutChart from "../charts/OrganizationalUnit/Organizat
 import MultipleSexBarChart from "../charts/SexPieChart/MultipleSexBarChart"
 import StatCard from "../components/StatCard"
 import { IconFriends, IconHierarchy3 } from "@tabler/icons-react"
-import OrgUnitMultiple from "../charts/OrganizationalUnit/OrgUnitMultiple"
+import PositionBarChart from "../charts/PositionBarChart"
+import OrganizationalUnitBarChart from "../charts/OrganizationalUnit/OrganizationalUnitBarChart"
+import PartTimeTypePieChart from "../charts/PartTimeTypePieChart"
 
 const BasicStats = () => {
     const borderColor = "#339af0";
@@ -23,25 +25,25 @@ const BasicStats = () => {
             </Grid.Col>
             <Grid.Col span={3} h={gridHeight}>
                 <StatCard 
-                    chart={<OrganizationalUnitDonutChart />}
+                    chart={<PartTimeTypePieChart />}
                     icon={<IconHierarchy3 stroke={2} style={{marginRight: 5}}/>}
-                    title="Nemek aránya"
+                    title="Rész- és teljes munkaidős dolgozók"
                     borderColor={borderColor}
                 />
             </Grid.Col>
             <Grid.Col span={6} h={gridHeight}>
                 <StatCard 
-                    chart={<MultipleSexBarChart />}
+                    chart={<PositionBarChart />}
                     icon={<IconFriends stroke={2} style={{marginRight: 5}}/>}
-                    title="Nemek aránya"
+                    title="Munkakör szerinti megoszlás"
                     borderColor={borderColor}    
                 />
             </Grid.Col>
             <Grid.Col span={6} h={gridHeight}>
                 <StatCard 
-                    chart={<OrgUnitMultiple />}
+                    chart={<OrganizationalUnitBarChart />}
                     icon={<IconFriends stroke={2} style={{marginRight: 5}}/>}
-                    title="Nemek aránya"
+                    title="Szervezeti egység szerinti megoszlás"
                     borderColor={borderColor}    
                 />
             </Grid.Col>
@@ -56,13 +58,13 @@ const BasicStats = () => {
                     <StatCard 
                         chart={<AgeNumbers />}
                         icon={<IconFriends stroke={2} style={{marginRight: 5}}/>}
-                        title="Nemek aránya"
+                        title="Átlag havi munkaóraszám"
                         borderColor={borderColor}    
                     />
                     <StatCard 
                         chart={<AgeNumbers />}
                         icon={<IconFriends stroke={2} style={{marginRight: 5}}/>}
-                        title="Nemek aránya"
+                        title="Medián havi munkaóraszám"
                         borderColor={borderColor}    
                     />
                 </Stack>
